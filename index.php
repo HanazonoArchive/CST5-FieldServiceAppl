@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/Firefly.png" type="image/png">
-    <title>Field Service Application</title>
+    <title>Field Service</title>
+    <link rel="stylesheet" href="public/css/index.css">
+    <script src="public/javaScript/sidebarToggle.js" defer></script>
 </head>
+
 <body>
-    <div class="header">
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <!-- Logo Section -->
         <div class="logo_container">
-            <img id="website_icon" src="assets/Firefly.png" alt="Logo">
-            <h1 id="website_name">FSA</h1>
+            <button id="toggle_button" onclick="toggleSidebar()">
+                <img id="website_icon" src="public/assets/icons/Firefly.png" alt="Logo">
+                <h1 id="website_name">FSA</h1>
+            </button>
         </div>
 
-        <div class="navigation_container">
-            <button id="job-scheduling_button" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M3 4h18v18H3V4zm2 2v14h14V6H5zm2 3h10v2H7V9zm0 4h7v2H7v-2z" />
-                </svg>
-            </button>
-            <button id="inventory-management_button" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17v-6l10 5 10-5v6l-10 5-10-5z" />
-                </svg>
-            </button>
-            <button id="customer-information_button" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-            </button>
+        <!-- Navigation Links -->
+        <div class="nav_links">
+            <a href="#" class="nav_link">
+                <img src="public/assets/icons/job-scheduling.svg" alt="">
+                <div class="job-scheduling link">Job Scheduling</div>
+            </a>
+            <a href="#" class="nav_link">
+                <img src="public/assets/icons/inventory-management.svg" alt="">
+                <div class="inventory-management link">Inventory Management</div>
+            </a>
+            <a href="#" class="nav_link">
+                <img src="public/assets/icons/customer-information.svg" alt="">
+                <div class="customer-information link">Customer Information</div>
+            </a>
         </div>
     </div>
 
-    <div class="content_container">
-        <h2>Testing the Database!</h2>
-        <?php include('database/database-connection.php') ?>
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Main Content Goes Here</h2>
+        <p>This is where your page content will be displayed.</p>
     </div>
-
-    <footer>
-        <script src="script/index.js"></script>
-    </footer>
 </body>
+
 </html>

@@ -1,0 +1,154 @@
+@import url(../fonts/inter.css);
+
+:root {
+    --background-color: #1C1C1C; /* Light gray background for a clean and modern look */
+    --navbar-color: #303030; /* Light gray for the navigation bar */
+    --text-color: #F4F4F4; /* Dark gray for text to ensure readability */
+    --optional-color: #FF6F61; /* Muted blue for optional or secondary elements */
+    --highlighted-color: #FF8C00; /* Rich blue for hover and active states */
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    font-family: 'Inter', serif;
+    color: var(--text-color);
+    display: flex;
+}
+
+ /* Sidebar */
+ .sidebar {
+    width: 85px; /* Default collapsed width */
+    height: 100%;
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+    transition: width 0.3s;
+    padding: 20px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.sidebar .logo_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.sidebar .link{
+    display: none;
+}
+
+.sidebar .nav_link img{
+    width: 40px;
+    height: auto;
+}
+
+#website_icon {
+    width: 40px;
+    height: 40px;
+}
+
+#website_name {
+    font-size: 24px;
+    color: var(--text-color);
+    display: none;
+}
+
+/* Navigation Links */
+.nav_links {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.nav_link:hover {
+    background-color: #f39c12;
+    color: var(--navbar-color);
+}
+
+.nav_link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Toggle Button */
+#toggle_button {
+     /* Button is outside of the sidebar */
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#toggle_button:hover {
+    background-color: #f39c12;
+    color: var(--navbar-color);
+}
+
+.sidebar.expanded {
+    width: 250px;
+    /* Expanded width */
+}
+
+.sidebar.expanded #website_name {
+    display: inline;
+}
+
+.sidebar.expanded #toggle_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 60px;
+    gap: 10px;
+}
+
+.sidebar.expanded .nav_link{
+    display: flex;
+    justify-content: flex-start;
+    height: 65px;
+    width: 230px;
+}
+
+.sidebar.expanded .link{
+    display: block;
+    min-width: 160px;
+}
+
+.sidebar.expanded+.main-content {
+    margin-left: 250px; /* Adjust to the expanded sidebar width */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 85px; /* Adjust this margin to the default sidebar width */
+    transition: margin-left 0.3s;
+    flex: 1;
+    padding: 20px;
+}
