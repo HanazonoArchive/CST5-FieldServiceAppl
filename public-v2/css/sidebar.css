@@ -92,13 +92,13 @@ body {
 }
 
 .menu-item {
-    margin: 5px 0px 5px 0px;
-    padding: 5px 10px 5px 10px;
+    margin: 5px 0px;
+    padding: 5px 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 0px;
     width: 100%;
     transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
     border-radius: 5px;
@@ -106,19 +106,24 @@ body {
 
 .menu-item:hover {
     background-color: var(--highlighted-color);
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .menu-item img {
     width: 40px;
+    height: 40px;
     transition: width 0.3s ease-in-out;
 }
 
 .menu-text {
+    flex-grow: 1;  /* Allow the text to take up the remaining space */
     padding: 0px 0px 0px 10px;
     opacity: 0;
     font-weight: 500;
     font-size: 16px;
+    text-overflow: ellipsis;  /* Ensure long text gets truncated with '...' */
+    white-space: nowrap;  /* Prevent text from wrapping to a new line */
+    overflow: hidden;  /* Hide any overflowed text */
 }
 
 .sidebar.expanded .menu-text {
@@ -138,9 +143,9 @@ body {
     color: var(--text-color);
     text-decoration: none;
     padding: 10px 10px;
-    transition: background-color 0.3s ease-in-out;
     font-weight: 400;
     font-size: 16px;
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
     border-radius: 5px;
 }
 
@@ -180,6 +185,11 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+}
+
+.toggle-btn-container p {
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .sidebar.expanded~.toggle-btn-container {

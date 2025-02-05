@@ -35,5 +35,5 @@ $pathText = $paths[$directory][$currentPage] ?? " | Home";
     <button class="toggle-btn" onclick="toggleSidebar()">
         <img src="<?= BASE_URL ?>/assets/expand_navbar.svg" alt="Expand Navbar">
     </button>
-    <p class="Path"><?= $pathText; ?></p>
+    <p><?= $pathText; ?></p>
 </div>
