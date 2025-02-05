@@ -1,11 +1,11 @@
 @import url(../fonts/inter.css);
 
 :root {
-    --background-color: #1C1C1C; /* Light gray background for a clean and modern look */
-    --navbar-color: #303030; /* Light gray for the navigation bar */
-    --text-color: #F4F4F4; /* Dark gray for text to ensure readability */
-    --optional-color: #FF6F61; /* Muted blue for optional or secondary elements */
-    --highlighted-color: #FF8C00; /* Rich blue for hover and active states */
+    --background-color: #EAEAEA; /* Light gray background for a clean and modern look */
+    --navbar-color: #F0F0F0; /* Light gray for the navigation bar */
+    --text-color: #000000; /* Dark gray for text to ensure readability */
+    --optional-color: #645E5E; /* Muted blue for optional or secondary elements */
+    --highlighted-color: #ffb964; /* Rich blue for hover and active states */
 }
 
 *{
@@ -23,7 +23,7 @@ body {
 
  /* Sidebar */
  .sidebar {
-    width: 85px; /* Default collapsed width */
+    width: 80px; /* Default collapsed width */
     height: 100%;
     background-color: var(--navbar-color);
     color: var(--text-color);
@@ -33,6 +33,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px var(--optional-color)(0, 0, 0, 0.2);
 }
 
 .sidebar .logo_container {
