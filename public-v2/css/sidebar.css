@@ -30,11 +30,13 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     transition: width 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 100;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 0px 10px;
@@ -47,12 +49,22 @@ body {
 
 /* Logo */
 .logo {
+    margin: 10px 0px 10px 0px;;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 15px 5px 15px 5px;
+    padding: 5px;
     transition: padding 0.3s ease-in-out;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 5px;
 }
+
+.logo:hover {
+    background-color: var(--highlighted-color);
+    border-radius: 5px;
+}
+
 
 .logo_icon {
     width: 50px;
@@ -139,27 +151,39 @@ body {
 
 /* Main Content */
 .content {
+    z-index: 98;
+    margin-top: 70px;
     margin-left: 80px;
-    padding: 20px;
+    padding: 10px;
     flex-grow: 1;
     transition: margin-left 0.3s ease-in-out;
 }
 
 .sidebar.expanded~.content {
-    margin-left: 300px;
+    margin-top: 70px;
+    margin-left: 280px;
 }
 
 /* Toggle Button */
 .toggle-btn-container {
     position: fixed;
-    top: 10px;
-    left: 100px;
-    z-index: 1000;
+    top: 0px;
+    left: 80px;
+    z-index: 99;
+    height: 70px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    background-color: var(--navbar-color);
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease-in-out;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .sidebar.expanded~.toggle-btn-container {
-    left: 300px;
+    left: 280px;
 }
 
 .toggle-btn {
@@ -168,8 +192,8 @@ body {
     color: white;
     font-size: 0px;
     cursor: pointer;
-    padding: 0px;
-    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    margin: 0px 0px 0px 0px;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
